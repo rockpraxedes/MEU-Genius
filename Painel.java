@@ -13,7 +13,6 @@ public class Painel extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JFrame frame;
 	private JPanel pan_botoes,pan_menu,pan_total;
-	private JLabel lab_lvl;
 	private botao[][] bot_jogo = new botao[6][6];
 	private botao[] bot_menu = new botao[10];
 	
@@ -29,12 +28,16 @@ public class Painel extends JFrame {
 		
 		//INSTANCIANDO OBJETOS;
 		JFrame frame = new JFrame("Genius");  
+		Icon b1 = new ImageIcon("b1.gif");  
+		Icon b2 = new ImageIcon("b2.gif");  
+		Icon b3 = new ImageIcon("b3.gif");  
+		Icon b4 = new ImageIcon("b4.gif");  
 		
 		//Setando configs da janela 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setLocation(100,100);
-		frame.setSize(400,390);
+		frame.setSize(350,420);
 		frame.setResizable(false);	
 		
 		//INSTANCIANDO LABELS C/ LAYOUTS DEFINIDOS; 
@@ -60,9 +63,9 @@ public class Painel extends JFrame {
 			pan_menu.add(bot_menu[x]);
 			//bot_menu[x].addActionListener(this);
 		}	//bot_menu[x].setText(x);
-		bot_menu[1].setText("NOVO JOGO");
-		bot_menu[2].setText("OPCOES");
-		bot_menu[3].setText("ESTATISTICAS");
+		bot_menu[1].setText("NOVO");
+		bot_menu[2].setText("OPCAO");
+		bot_menu[3].setText("RANKING");
 		bot_menu[4].setText("SAIR");
 		
 		//JOGO;
@@ -70,14 +73,16 @@ public class Painel extends JFrame {
 			for(int y=1;y<=2;y++){
 				bot_jogo[x][y] = new botao();
 				pan_botoes.add(bot_jogo[x][y]);
-				//Botao[x][y].setPreferredSize(new Dimension(130,130));
+				bot_jogo[x][y].setPreferredSize(new Dimension(130,130));
 				//Botao[x][y].addActionListener(this);
-				//bot_jogo[x][y].setBorderPainted(false);
+				bot_jogo[x][y].setBorderPainted(false);
 				bot_jogo[x][y].setBackground(Color.BLACK);
-				
 			}
 		}
-		
+				bot_jogo [1][1].setIcon(b1); 
+				bot_jogo [1][2].setIcon(b2); 
+				bot_jogo [2][1].setIcon(b3); 
+				bot_jogo [2][2].setIcon(b4); 
 	}
 	
 }
