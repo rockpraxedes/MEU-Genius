@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import java.lang.*;
 import java.util.Random;
 
-public class Painel extends JFrame {
+public class Painel extends JFrame implements ActionListener{
 
 	// DECLARANDO VARIAVEIS;
 	private static final long serialVersionUID = 1L;
@@ -15,6 +15,7 @@ public class Painel extends JFrame {
 	private JPanel pan_botoes,pan_menu,pan_total;
 	private botao[][] bot_jogo = new botao[6][6];
 	private botao[] bot_menu = new botao[10];
+	private int opcao = 0 ;
 	
 
 	//INSTANCIANDO OS OBJETOS;
@@ -57,6 +58,7 @@ public class Painel extends JFrame {
 		
 		// INSTANCIANDO E ADICIONANDO BOTOES:
 		
+		
 		//MENU;
 		for(int x=1;x<5;x++){ 
 			bot_menu[x]= new botao();
@@ -79,10 +81,19 @@ public class Painel extends JFrame {
 				bot_jogo[x][y].setBackground(Color.BLACK);
 			}
 		}
-				bot_jogo [1][1].setIcon(b1); 
-				bot_jogo [1][2].setIcon(b2); 
-				bot_jogo [2][1].setIcon(b3); 
-				bot_jogo [2][2].setIcon(b4); 
+	bot_jogo [1][1].setIcon(b1); 
+	bot_jogo [1][2].setIcon(b2); 
+	bot_jogo [2][1].setIcon(b3); 
+	bot_jogo [2][2].setIcon(b4); 
 	}
-	
+	public void actionPerformed(ActionEvent e) {	
+		
+		if (e.getSource() == bot_jogo [1][1]){
+			opcao = 1;
+			pisca pisca = new pisca();
+			pisca.setOp(opcao);
+			
+		
+		}
+	}
 }
